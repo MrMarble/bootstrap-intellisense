@@ -36,7 +36,7 @@ const languageSupport = [
   'asp',
 ];
 
-function activate(context) {
+export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
     vscode.commands.registerCommand('bootstrap-intellisense.enable', () => {
       vscode.window.showInformationMessage('Activated Bootstrap IntelliSense');
@@ -57,8 +57,7 @@ function activate(context) {
         const classes = await getBsClasses();
         const completionItems = [];
         for (const className of classes) {
-          const completionItem = new vscode.CompletionItem();
-          completionItem.label = `${className} `;
+          const completionItem = new vscode.CompletionItem(className);
 
           completionItem.kind = vscode.CompletionItemKind.Value;
           completionItem.detail = 'Bootstrap IntelliSense';
@@ -83,7 +82,7 @@ function activate(context) {
   );
 }
 
-function deactivate() {
+export function deactivate() {
   clearCache();
 }
 
@@ -123,8 +122,3 @@ function selectBootstrapVersion() {
   });
   version.show();
 }
-
-module.exports = {
-  activate,
-  deactivate,
-};

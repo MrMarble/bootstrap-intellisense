@@ -5,9 +5,9 @@ import fetch from 'node-fetch';
 import vscode from 'vscode';
 
 let url = 'https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.css';
-let statusBarItem = null;
+let statusBarItem: vscode.StatusBarItem | null = null;
 
-export const setStatusBarItem = (version) => {
+export const setStatusBarItem = (version: string) => {
   if (statusBarItem === null) {
     statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 1);
   }
@@ -70,9 +70,9 @@ export const getBsClasses = async () => {
   return classesCache;
 };
 
-const extractCssClasses = (css) => {
+const extractCssClasses = (css: string): string[] => {
   const classRegex = /\.(?!\d)([\w-]+)/g;
-  const classes = new Set();
+  const classes = new Set<string>();
   let match;
   while ((match = classRegex.exec(css))) {
     classes.add(match[1]);
@@ -80,17 +80,17 @@ const extractCssClasses = (css) => {
   return Array.from(classes);
 };
 
-export const getBsVersion = () => {
+export const getBsVersion = (): string => {
   const config = vscode.workspace.getConfiguration('bootstrapIntelliSense');
   return config.get('version') || 'Bootstrap v5.3';
 };
 
-export const setBsVersion = (version) => {
+export const setBsVersion = (version: string) => {
   const config = vscode.workspace.getConfiguration('bootstrapIntelliSense');
   config.update('version', version, true);
 };
 
-const saveCacheClasses = (classes) => {
+const saveCacheClasses = (classes: string[]) => {
   const cachePath = getCachePath();
   fs.writeFileSync(cachePath, JSON.stringify(classes));
 };
@@ -133,7 +133,8 @@ const getCacheDir = () => {
   try {
     fs.mkdirSync(cachePath, { recursive: true });
   } catch (err) {
-    if (err.code !== 'EEXIST') {
+
+    if (typeof err === 'object' && err !== null && ('code' in err) && err.code !== 'EEXIST') {
       console.error(`Failed to create cache directory: ${err.message}`);
     }
   }
