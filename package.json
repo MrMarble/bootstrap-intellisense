@@ -24,8 +24,11 @@
   "main": "./src/extension.js",
   "scripts": {
     "deploy": "vsce publish",
+    "vscode:prepublish": "pnpm compile",
+    "compile":"tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "pnpm run compile && pnpm run lint",
     "lint": "eslint .",
-    "pretest": "npm run lint",
     "test": "node ./src/test/runTest.js"
   },
   "contributes": {
@@ -81,10 +84,14 @@
     "node-fetch": "^2.6.11"
   },
   "devDependencies": {
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^7.7.0",
+    "@typescript-eslint/parser": "^7.7.0",
     "@vscode/test-electron": "^2.2.2",
     "eslint": "^8.33.0",
     "glob": "^8.1.0",
-    "mocha": "^10.1.0"
+    "mocha": "^10.1.0",
+    "typescript": "^5.4.5"
   },
   "engines": {
     "vscode": "^1.67.1"
