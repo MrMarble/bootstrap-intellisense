@@ -1,11 +1,5 @@
-const vscode = require('vscode');
-const {
-  getBsClasses,
-  getBsVersion,
-  setBsVersion,
-  clearCache,
-  setStatusBarItem,
-} = require('./bootstrap');
+import vscode from 'vscode';
+import { getBsClasses, getBsVersion, setBsVersion, clearCache, setStatusBarItem } from './bootstrap';
 
 const languageSupport = [
   'html',

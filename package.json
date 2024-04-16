@@ -25,7 +25,7 @@
   "scripts": {
     "deploy": "vsce publish",
     "vscode:prepublish": "pnpm compile",
-    "compile":"tsc -p ./",
+    "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "pretest": "pnpm run compile && pnpm run lint",
     "lint": "eslint .",
@@ -85,6 +85,7 @@
   },
   "devDependencies": {
     "@types/node": "18.x",
+    "@types/vscode": "^1.88.0",
     "@typescript-eslint/eslint-plugin": "^7.7.0",
     "@typescript-eslint/parser": "^7.7.0",
     "@vscode/test-electron": "^2.2.2",

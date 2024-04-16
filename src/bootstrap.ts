@@ -1,13 +1,13 @@
-const os = require('os');
-const fs = require('fs');
-const path = require('path');
-const fetch = require('node-fetch');
-const vscode = require('vscode');
+import os from 'os';
+import fs from 'fs';
+import path from 'path';
+import fetch from 'node-fetch';
+import vscode from 'vscode';
 
 let url = 'https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.css';
 let statusBarItem = null;
 
-const setStatusBarItem = (version) => {
+export const setStatusBarItem = (version) => {
   if (statusBarItem === null) {
     statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 1);
   }
@@ -19,7 +19,7 @@ const setStatusBarItem = (version) => {
   statusBarItem.show();
 };
 
-const getBsClasses = async () => {
+export const getBsClasses = async () => {
   const classesCache = getCacheClasses();
 
   if (classesCache.length === 0) {
@@ -80,12 +80,12 @@ const extractCssClasses = (css) => {
   return Array.from(classes);
 };
 
-const getBsVersion = () => {
+export const getBsVersion = () => {
   const config = vscode.workspace.getConfiguration('bootstrapIntelliSense');
   return config.get('version') || 'Bootstrap v5.3';
 };
 
-const setBsVersion = (version) => {
+export const setBsVersion = (version) => {
   const config = vscode.workspace.getConfiguration('bootstrapIntelliSense');
   config.update('version', version, true);
 };
@@ -103,7 +103,7 @@ const getCacheClasses = () => {
   return [];
 };
 
-const clearCache = () => {
+export const clearCache = () => {
   const cachePathDir = getCacheDir();
   fs.readdir(cachePathDir, (err, files) => {
     if (err) {
@@ -140,10 +140,3 @@ const getCacheDir = () => {
   return cachePath;
 };
 
-module.exports = {
-  getBsClasses,
-  getBsVersion,
-  setBsVersion,
-  clearCache,
-  setStatusBarItem,
-};
