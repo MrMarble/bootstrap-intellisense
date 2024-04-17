@@ -43,18 +43,27 @@ export function activate(context: vscode.ExtensionContext) {
     }),
   );
 
-  const classRegex =/class(?:Name)?=["'][ \w]*(?!["'])$/
+  const classRegex =/class(?:Name)?=["']([ -\w]*)(?!["'])$/
   const disposable = vscode.languages.registerCompletionItemProvider(
     languageSupport,
     {
       async provideCompletionItems(document, position) {
         const lineUntilPos = document.getText(new Range(new Position(position.line, 0), position));
-        if (!lineUntilPos.match(classRegex)) {
+        const matches = lineUntilPos.match(classRegex);
+        if (!matches) {
           return null;
         }
         
         const classes = await getBsClasses();
         const completionItems = [];
+
+        matches[1].split(' ').forEach((className) => {
+          const index = classes.indexOf(className);
+          if (index !== -1) {
+            classes.splice(index, 1);
+          }
+        })
+
         for (const className of classes) {
           const completionItem = new vscode.CompletionItem(className);
 
