@@ -1,4 +1,4 @@
-import vscode from 'vscode';
+import vscode, { Position, Range } from 'vscode';
 import { getBsClasses, getBsVersion, setBsVersion, clearCache, setStatusBarItem } from './bootstrap';
 
 const languageSupport = [
@@ -43,17 +43,16 @@ export function activate(context: vscode.ExtensionContext) {
     }),
   );
 
+  const classRegex =/class(?:Name)?=["'][ \w]*(?!["'])$/
   const disposable = vscode.languages.registerCompletionItemProvider(
     languageSupport,
     {
       async provideCompletionItems(document, position) {
-        const lineText = document.lineAt(position).text;
-        if (
-          lineText.lastIndexOf('class=', position.character) === -1 &&
-          lineText.lastIndexOf('className=', position.character) === -1
-        ) {
-          return undefined;
+        const lineUntilPos = document.getText(new Range(new Position(position.line, 0), position));
+        if (!lineUntilPos.match(classRegex)) {
+          return null;
         }
+        
         const classes = await getBsClasses();
         const completionItems = [];
         for (const className of classes) {

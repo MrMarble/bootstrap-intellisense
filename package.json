@@ -21,7 +21,7 @@
   },
   "license": "MIT",
   "publisher": "hossaini",
-  "main": "./src/extension.js",
+  "main": "./out/extension.js",
   "scripts": {
     "deploy": "vsce publish",
     "vscode:prepublish": "pnpm compile",
