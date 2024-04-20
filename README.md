@@ -12,7 +12,7 @@ This extension is inspired by the popular Tailwind CSS IntelliSense extension.
 
 ## Installation
 
-**[Install via the Visual Studio Code Marketplace →](https://marketplace.visualstudio.com/items?itemName=hossaini.bootstrap-intellisense)**
+**[Install via the Visual Studio Code Marketplace →](https://marketplace.visualstudio.com/items?itemName=mrmarble.bootstrap-intellisense)**
 
 In order for the extension to activate you must have Bootstrap installed in your workspace.
 
@@ -32,10 +32,6 @@ Bootstrap Intellisense is a Visual Studio Code extension that offers CSS class a
 #### suported versions:
 
 <img src="./assets/images/img2.png"/>
-
-## Known Issues
-
-If you encounter any errors or have suggestions for improvement, please feel free to contact me at Hossainih03@gmail.com. I appreciate your feedback and will do my best to address any issues you may have. Thank you in advance!
 
 ## Contributing
 
