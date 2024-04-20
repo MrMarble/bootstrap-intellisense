@@ -84,7 +84,6 @@
     "onStartupFinished"
   ],
   "dependencies": {
-    "axios": "^1.4.0",
     "node-fetch": "^2.6.11"
   },
   "devDependencies": {
