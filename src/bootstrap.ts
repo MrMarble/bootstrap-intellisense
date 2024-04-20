@@ -132,10 +132,10 @@ const getCacheDir = () => {
   }
   try {
     fs.mkdirSync(cachePath, { recursive: true });
-  } catch (err) {
+  } catch (e) {
 
-    if (typeof err === 'object' && err !== null && ('code' in err) && err.code !== 'EEXIST') {
-      console.error(`Failed to create cache directory: ${err.message}`);
+    if (e instanceof Error && 'code' in e && e.code !== 'EEXIST') {
+      console.error(`Failed to create cache directory: ${e.message}`);
     }
   }
   return cachePath;

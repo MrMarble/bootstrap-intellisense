@@ -24,7 +24,7 @@
   "scripts": {
     "package": "vsce package --no-dependencies",
     "publish": "vsce publish --no-dependencies",
-    "vscode:prepublish": "pnpm run esbuild-base --minify",
+    "vscode:prepublish": "pnpm run build",
     "clean": "rimraf dist",
     "check": "tsc --noEmit",
     "build": "pnpm run check && pnpm run clean && pnpm run esbuild-base --minify",
