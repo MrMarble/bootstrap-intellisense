@@ -1,6 +1,6 @@
 # Bootstrap Autocomplete
-![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/mrmarble.bootstrap-autocomplete)
-![Visual Studio Marketplace Last Updated](https://img.shields.io/visual-studio-marketplace/last-updated/mrmarble.bootstrap-autocomplete)
+![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/MrMarble.bootstrap-autocomplete)
+![Visual Studio Marketplace Last Updated](https://img.shields.io/visual-studio-marketplace/last-updated/MrMarble.bootstrap-autocomplete)
 
 
 Bootstrap Autocomplete is a Visual Studio Code extension that enhances the development experience with Bootstrap. It offers CSS class autocompletion, reducing errors and saving time for developers. This tool simplifies working with Bootstrap, making the development process more efficient and effective.
@@ -9,7 +9,7 @@ This extension is a fork of the no longer maintained [Bootstrap IntelliSense](ht
 
 ## Installation
 
-**[Install via the Visual Studio Code Marketplace →](https://marketplace.visualstudio.com/items?itemName=mrmarble.bootstrap-autocomplete)**
+**[Install via the Visual Studio Code Marketplace →](https://marketplace.visualstudio.com/items?itemName=MrMarble.bootstrap-autocomplete)**
 
 In order for the extension to activate you must have Bootstrap installed in your workspace.
 
