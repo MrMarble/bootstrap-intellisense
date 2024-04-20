@@ -1,18 +1,15 @@
-# Bootstrap IntelliSense (No Longer Maintained)
+# Bootstrap Autocomplete
+![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/mrmarble.bootstrap-autocomplete)
+![Visual Studio Marketplace Last Updated](https://img.shields.io/visual-studio-marketplace/last-updated/mrmarble.bootstrap-autocomplete)
 
-## Note: This project is no longer actively maintained by the original developer.
 
-If you would like to add new features or make improvements to the project, feel free to fork the repository and submit your changes via pull requests. Your contributions will be highly appreciated and will help make the project even better. Thank you in advance for your interest in contributing!
+Bootstrap Autocomplete is a Visual Studio Code extension that enhances the development experience with Bootstrap. It offers CSS class autocompletion, reducing errors and saving time for developers. This tool simplifies working with Bootstrap, making the development process more efficient and effective.
 
----
-
-Bootstrap IntelliSense is a Visual Studio Code extension that enhances the development experience with Bootstrap. It offers CSS class autocompletion, reducing errors and saving time for developers. This tool simplifies working with Bootstrap, making the development process more efficient and effective.
-
-This extension is inspired by the popular Tailwind CSS IntelliSense extension.
+This extension is a fork of the no longer maintained [Bootstrap IntelliSense](https://github.com/hossaini310/bootstrap-intellisense) extension. It has been updated to support the latest versions of Bootstrap and to provide a better development experience for users. The extension is open source and welcomes contributions from the community.
 
 ## Installation
 
-**[Install via the Visual Studio Code Marketplace →](https://marketplace.visualstudio.com/items?itemName=mrmarble.bootstrap-intellisense)**
+**[Install via the Visual Studio Code Marketplace →](https://marketplace.visualstudio.com/items?itemName=mrmarble.bootstrap-autocomplete)**
 
 In order for the extension to activate you must have Bootstrap installed in your workspace.
 
@@ -24,7 +21,7 @@ The extension will be activated automatically when it's installed. If it's not a
 
 ### CSS Class Autocomplete
 
-Bootstrap Intellisense is a Visual Studio Code extension that offers CSS class autocomplete for Bootstrap. Enter a class name and the extension will suggest matching CSS classes, if not than try `ctrl + space` to trigger the autocomplete.
+Bootstrap Autocomplete is a Visual Studio Code extension that offers CSS class autocomplete for Bootstrap. Enter a class name and the extension will suggest matching CSS classes, if not than try `ctrl + space` to trigger the autocomplete.
 
 <!-- add img -->
 <img src="/assets/images/img1.png"/>
