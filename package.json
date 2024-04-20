@@ -1,7 +1,7 @@
 {
   "name": "bootstrap-autocomplete",
   "displayName": "Bootstrap Autocomplete",
-  "version": "1.1.10",
+  "version": "1.2.0",
   "description": "Bootstrap Autocomplete: Enhance Bootstrap development with CSS class autocompletion for efficient coding in Visual Studio Code.",
   "categories": [
     "Linters"
